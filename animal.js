@@ -1,3 +1,8 @@
+//set course length in meters and create course
+var courseLength = 20;
+var numLanes = 9;
+var course = new Course(courseLength, numLanes);
+
 //declare/initialize animals
 var rabbit = new Animal("Peter Rabbit",  1, 0.7, 0.8,"<img src='https://openclipart.org/people/rones/Rabbit_by_Rones.svg' height='20' width='20'/>");
 var turtle = new Animal("Myrtle the Turtle", 3, 0.8, 0.2, "<img src='https://openclipart.org/people/valessiobrito/valessiobrito_Green_sea_turtle.svg' height='20' width='20'/>");
@@ -8,10 +13,7 @@ var numAnimals = allAnimals.length;
   
 var winnerExists = false;
 
-//set course length in meters and create course
-var courseLength = 20;
-var numLanes = 8;
-var course = new Course(courseLength, numLanes);
+
 
 //displays animals in starting positions before race begins
 refreshTable();

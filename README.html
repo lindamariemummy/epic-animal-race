@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title> README</title>
+</head>
+<body>
+	<h4> The Epic Animal Racing Game, designed and coded by Linda Mummy, September 2014. </h4>
+<p> Click on the button repeatedly to watch the animals race towards the finish line. Animals can collide, eat each other, step on each other, or crash into each other and be killed/disqualified. Don't let the wolf get too close to the rabbit! </p>
+ 	<p> There are several easy adjustments to change the layout of the game through animal.html: </p>
+	<ol> 
+		<li> The variable "courseLength" in line 2 changes the length of the course (default is 20 meters/timesteps). </li>
+		<li>The variable "numLanes" in line 4 of changes the number of lanes the animals have to run in (default is 9 lanes). </li>
+		<li> Various properties about the animals can be changed on lines 7-10. The constructor parameters are of the form
+			Animal(animal name,  starting lane, probability of moving forward, probability of moving side to side, image source url) </li>
+	</ol>
+
+	<p> Since the animals move forward probabilistically, the outcome of the race can be greatly affected by modifying the motion probabilities for each animal. All probilities must be in [0,1].  </p>
+</body>
+</html>

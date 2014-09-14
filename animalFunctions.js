@@ -149,7 +149,7 @@ function Location(laneNumber, distance) {
 		}
 	}
 	this.moveRight = function() {
-		if (laneNumber !=numLanes) {
+		if (laneNumber !=numLanes-1) {
 			laneNumber++;
 		}
 	}
@@ -240,7 +240,7 @@ function Animal(name, begLane, probMovingFW, probMovingSS, abbrev) {
 function refreshTable()
 {
 	var table;
-	var numRows = 9;
+	var numRows = numLanes;
 	var numCols = courseLength+5;
 	//var finishLine = courseLength;
 	table = document.getElementById("racetrack");
@@ -255,9 +255,6 @@ function refreshTable()
 	      //displays vertical bar at finish line
 	      if( j ==courseLength ) {
 	      	tableString += '<td id="finish"></td>';
-	      }
-	      else if (i % 2 == 0) {
-	      	tableString += '<td> </td>';
 	      }
 	      //displays empty cell
 	      else
