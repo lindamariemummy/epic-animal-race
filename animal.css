@@ -5,8 +5,8 @@ h3 {
 td {
 	width: 20px;
 	height: 20px;
-	 
 }
+
 
 #button { 
 	background-color: black;
@@ -26,8 +26,7 @@ div {
 	width: 900px;
 	height: 300px;
 	border: 5px solid brown;
-	margin-left: auto;
-  	margin-right: auto;
+	
 
 }
 
@@ -40,6 +39,7 @@ div {
 	text-align: center;
 	margin:10px;
 	color: red;
+	border-radius: 10px;
 }
 
 #sidebar {
@@ -47,12 +47,12 @@ div {
 }
 
 #racetrack {
-	border:2px solid black;
+	border: 5px solid brown;
 	background-color: white;
 }
 
-footer {
-
+#finish {
+	border-left: 3px dashed orange;
 }
 
 body {

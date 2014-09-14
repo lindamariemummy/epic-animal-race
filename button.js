@@ -12,7 +12,7 @@ $(document).ready(function() {
     	
         //click only advances the animals if no one has won
         if(!winnerExists) {
-            winnerExists = timeStep();
+               winnerExists = timeStep();
         }
     });
 });
