@@ -1,6 +1,6 @@
 //function is called when user clicks on button, returns true if a winner is found
 function timeStep() {
-	
+
 	//clears the racetrack
 	refreshTable();
 
@@ -18,8 +18,8 @@ function timeStep() {
 
 				printAnimals(allAnimals, numAnimals);
 				crash(allAnimals[i].location);
-				alert("Oh no! " + allAnimals[i].name + " and " + allAnimals[j].name + " collided and have been disqualified!");
-				
+		
+				$b.text("Oh no! " + allAnimals[i].name + " and " + allAnimals[j].name + " collided and have been disqualified!");
 				//removes the crashed animals from the race.
 				allAnimals[i].isRacing = false;
 				allAnimals[j].isRacing = false;
@@ -33,14 +33,14 @@ function timeStep() {
 
 	//checks to see if the rabbit is next to the wolf
 	if (course.adjacentLocation(rabbit.location, wolf.location) && rabbit.isRacing && wolf.isRacing) {
-			alert("Oh no, the wolf and rabbit got too close to each other! \n The wolf has eaten the rabbit and been disqualified.");
-			wolf.isRacing = false;
-			rabbit.isRacing = false;
+		$b.html("Oh no, the wolf and rabbit got too close to each other! \n The wolf has eaten the rabbit and been disqualified.");
+		wolf.isRacing = false;
+		rabbit.isRacing = false;
 	}
 	
 	//checks to see if the turtle is next to the elephant
 	if (course.adjacentLocation(elephant.location, turtle.location) && elephant.isRacing && turtle.isRacing) {
-			alert("Oh no, the elephant didn't notice the turtle! \n The elephant has stepped on the turtle and been disqualified.");
+			$b.html("Oh no, the elephant didn't notice the turtle! \n The elephant has stepped on the turtle and been disqualified.");
 			console.log(elephant.location.getDistance()+" " + elephant.location.getLane() + " " +turtle.location.getDistance()+" " + turtle.location.getLane() );
 			elephant.isRacing = false;
 			turtle.isRacing = false;
@@ -98,7 +98,7 @@ function checkAndPrintWinner(animalArray, numAnimals) {
 
 	//displays winner string, if applicable
 	if (winnerString != ""){
-		alert(winnerString);
+		$b.html(winnerString);
 	}
 
 	//returns true if an animal has won the race
@@ -129,10 +129,10 @@ function Location(laneNumber, distance) {
 	var distance = distance;
 	this.getLane = function() {
 		return laneNumber;
-	}
+	};
 	this.getDistance = function() {
 		return distance;
-	}
+	};
 	this.moveForward = function() {
 		distance++;
 		if (distance == courseLength)
@@ -142,24 +142,24 @@ function Location(laneNumber, distance) {
 		else {
 			return false;
 		}
-	}
+	};
 	this.moveLeft = function() {
 		if (laneNumber !=0) {
 		laneNumber--;
 		}
-	}
+	};
 	this.moveRight = function() {
 		if (laneNumber !=numLanes-1) {
 			laneNumber++;
 		}
-	}
+	};
 	this.printLocation = function() {
 		console.log("lane: " + laneNumber + ", distance: " + distance + " meters.");
-	}
+	};
 
 	this.setLaneNumber = function(newLaneNumber) {
 		laneNumber = newLaneNumber;
-	}
+	};
 }
 
 //Course constructor
@@ -177,7 +177,7 @@ function Course(courseLength, numLanes) {
 			else {
 				return false;
 			}
-		}
+		};
 
 		//Determines if 2 locations are adjacent, returns true or false
 	this.adjacentLocation = function(location1, location2) {
@@ -194,7 +194,7 @@ function Course(courseLength, numLanes) {
 		else {
 			return false;
 		}	
-	}
+	};
 }
 
 //Animal constructor
@@ -204,7 +204,7 @@ function Animal(name, begLane, probMovingFW, probMovingSS, abbrev) {
 	this.abbrev = abbrev;
 	this.isRacing = true;
 	
-	//sets the probabiltiy fo the animal moving forward or side to side (probability in [0,1])
+	//sets the probability fo the animal moving forward or side to side (probability in [0,1])
 	this.probMovingFW = probMovingFW;
 	this.probMovingSS = probMovingSS;
 	this.isWinner = false;
@@ -227,23 +227,20 @@ function Animal(name, begLane, probMovingFW, probMovingSS, abbrev) {
 				this.location.moveLeft();
 			}
 		}
-	}
+	};
 
 	//removes animal from race
 	this.remove = function() {
 		this.location = {};
-	}
+	};
 }
 
 
 //refreshes racetrack
-function refreshTable()
-{
+function refreshTable() {
 	var table;
 	var numRows = numLanes;
 	var numCols = courseLength+5;
-	//var finishLine = courseLength;
-	table = document.getElementById("racetrack");
 
 	tableString = "";
 
@@ -253,7 +250,7 @@ function refreshTable()
 	   for (var j = 0; j < numCols; j++){
 	      
 	      //displays vertical bar at finish line
-	      if( j ==courseLength ) {
+	      if( j == courseLength ) {
 	      	tableString += '<td id="finish"></td>';
 	      }
 	      //displays empty cell
@@ -267,5 +264,5 @@ function refreshTable()
 
 	tableString += '</table>'
 
-	table.innerHTML=tableString;
+	$("#racetrack").html(tableString);
 }

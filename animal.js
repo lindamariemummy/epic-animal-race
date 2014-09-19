@@ -12,8 +12,7 @@ var allAnimals =[rabbit, turtle, wolf, elephant];
 var numAnimals = allAnimals.length;
   
 var winnerExists = false;
-
-
+var $b = $("#button");
 
 //displays animals in starting positions before race begins
 refreshTable();
