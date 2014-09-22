@@ -1,7 +1,7 @@
 //set course length in meters and create course
-var courseLength = 20;
+var courseLength = 10;
 var numLanes = 9;
-var course = new Course(courseLength, numLanes);
+
 
 //declare/initialize animals
 var rabbit = new Animal("Peter Rabbit",  1, 0.7, 0.8,"<img src='https://openclipart.org/people/rones/Rabbit_by_Rones.svg' height='20' width='20'/>");
@@ -9,6 +9,7 @@ var turtle = new Animal("Myrtle the Turtle", 3, 0.8, 0.2, "<img src='https://ope
 var wolf = new Animal("Ralph the Wolf",    5, 0.8, 0.5, "<img src='https://openclipart.org/people/worldlabel/Lone%20Wolf.svg' height='20' width='20'/>");
 var elephant = new Animal("Elsa the Elephant", 7, 0.7, .3, "<img src='https://openclipart.org/people/lemmling/lemmling_2D_cartoon_elephant.svg' height='20' width='20'/>");
 var allAnimals =[rabbit, turtle, wolf, elephant];
+var course = new Course(courseLength, numLanes);
 var numAnimals = allAnimals.length;
 var $b = $("#button");
 
@@ -16,9 +17,19 @@ $(document).ready(function() {
   
 	var winnerExists = false;
 
+		refreshTable();
+		printAnimals(allAnimals, numAnimals);
+
+	$("#distance").on("change", function() {
+	 	courseLength = parseInt($("#distance :selected").val());
+
+		console.log();
+		refreshTable();
+		printAnimals(allAnimals, numAnimals);
+		});
+
 	//displays animals in starting positions before race begins
-	refreshTable();
-	printAnimals(allAnimals, numAnimals);
+
 
   //store reference to body in variable
   var $r = $("#racetrack");
