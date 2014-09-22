@@ -1,5 +1,5 @@
 //function is called when user clicks on button, returns true if a winner is found
-function timeStep() {
+/*function timeStep() {
 
 	//clears the racetrack
 	refreshTable();
@@ -111,7 +111,7 @@ function disp(aType) {
 
 	if(aType.isRacing) { //animal is only displayed if it is still in the race
 		this.tableCell = document.getElementById("racetrack").rows[aType.location.getLane()].cells;
-		tableCell[aType.location.getDistance()].innerHTML=aType.abbrev;
+		$(tableCell[aType.location.getDistance()]).html(aType.abbrev);
 	}
 }
 
@@ -119,7 +119,7 @@ function disp(aType) {
 function crash(location) {
 
 	this.tableCell = document.getElementById("racetrack").rows[location.getLane()].cells;
-	tableCell[location.getDistance()].innerHTML="<img src='https://openclipart.org/people/DevynCJohnson/explode_1.svg' height='20' width='20'/>";
+	$(tableCell[location.getDistance()]).html("<img src='https://openclipart.org/people/DevynCJohnson/explode_1.svg' height='20' width='20'/>");
 }
 
 //Location object
@@ -265,4 +265,4 @@ function refreshTable() {
 	tableString += '</table>'
 
 	$("#racetrack").html(tableString);
-}
+} */
