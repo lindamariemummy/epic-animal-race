@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
   
   //store reference to button in variable
   var $body = $("body");
@@ -10,4 +10,4 @@ $(document).ready(function() {
       winnerExists = timeStep();
     }
   });
-});
+});*/
